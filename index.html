@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>feifanonline-非凡在线-你要的都在这里</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<script type="text/javascript" src="js/m.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/commonality.css">
+	<script type="text/javascript" src="js/move.js"></script>
+	<script type="text/javascript" src="js/swiper-4.2.2.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/swiper-4.2.2.min.css">
+
+</head>
+<body>
+	<div class="wrap" >
+		<header >
+			 <div class="header_box">
+				<!-- <img src="images/back_light.png" id="back"> -->
+			<input type="text" name="" placeholder="了解更多内容，百度一下，就知道" id="q">
+			 <ul id="ul1"></ul>
+			<!-- <audio src="music/River.mp3" autoplay="autoplay"></audio> -->
+			
+		</header>	
+
+		<div class="swiper-container">
+			  <div class="swiper-wrapper">
+			    <div class="swiper-slide"><img src="images/1.jpg"></div>
+			    <div class="swiper-slide"><img src="images/2.jpg"></div>
+			    <div class="swiper-slide"><img src="images/3.jpg"></div>
+			    <div class="swiper-slide"><img src="images/4.jpg"></div>
+			    <div class="swiper-slide"><img src="images/5.jpg"></div>
+			    <div class="swiper-slide"><img src="images/6.jpg"></div>
+			  </div>
+			</div>
+
+	<!-- 热门文章 -->
+	<div class="hot_article">
+		<h3>精选文章<a href=""></a></h3>
+		<ul class="hot_con">
+			<a href="###">
+				<li>
+					<img src="images/3.jpg">
+					<span class="hotpic_txt">
+						<strong>过年了，女朋友男朋友带回家了吗？</strong>
+					</span>
+				</li>
+			</a>
+			<a href="###">
+				<li>
+					<img src="images/2.jpg">
+					<span class="hotpic_txt">
+						<strong>过年了，女朋友男朋友带回家了吗？</strong>
+					</span>
+				</li>
+			</a>
+			<a href="###">
+				<li>
+					<img src="images/1.jpg">
+					<span class="hotpic_txt">
+						<strong>过年了，女朋友男朋友带回家了吗？</strong>
+					</span>
+				</li>
+			</a>
+			<a href="">
+				<li>
+					<img src="images/4.jpg">
+					<span class="hotpic_txt">
+						<strong>过年了，女朋友男朋友带回家了吗？</strong>
+					</span>
+				</li>
+			</a>
+			<a href="">
+				<li>
+					<img src="images/5.jpg">
+					<span class="hotpic_txt">
+						<strong>过年了，女朋友男朋友带回家了吗？</strong>
+					</span>
+				</li>
+			</a>
+			<a href="">
+				<li>
+					<img src="images/6.jpg">
+					<span class="hotpic_txt">
+						<strong>过年了，女朋友男朋友带回家了吗？</strong>
+					</span>
+				</li>
+			</a>
+		</ul>
+	</div>
+	<!-- 精选专栏 -->
+	<div class="new_book">
+		<h3>精选专栏</h3>
+		<ul>
+			<a href=""><li class="jx_li">
+				
+				<p><strong>专栏</strong>看完这些，你还会大声说你会PS么！</p>
+				<i>阅读 3000</i>
+				<span class="jxpic">
+					<img src="images/jx_1.jpg">
+				</span>
+				
+			</li></a>
+			<a href=""><li class="jx_li">
+				
+				<p><strong>专栏</strong>过年真无聊，只有学习能是我快乐...</p>
+				<i>阅读 9999</i>
+				<span class="jxpic">
+					<img src="images/jx_2.jpg">
+				</span>
+				
+			</li></a>
+			<a href=""><li class="jx_li">
+				
+				<p><strong>专栏</strong>20道HTML基础面试题（附答案）</p>
+				<i>阅读 19999</i>
+				<span class="jxpic">
+					<img src="images/jx_3.jpg">
+				</span>
+				
+			</li></a>
+		</ul>
+	</div>
+
+		<div class="footer">
+			<ul>
+				<a href="index.html"><li><img src="images/index.png">首页</li></a>
+				<a href="forum.html"><li><img src="images/luntan.png">论坛</li></a>
+				<a href="theme.html"><li><img src="images/f-dj-search.png">发现</li></a>
+				<a href="zh.html"><li><img src="images/zhanghao.png">我的</li></a>
+			</ul>
+		</div>
+	</div>
+	
+	
+	<div class="search_warp">
+		
+	</div>
+</body>
+</html>
+ <script type="text/javascript">
+ 
+ function baidudata(data){
+                var oUl=document.getElementById('ul1')
+                var html='';
+                if(data.s.length){
+                    oUl.style.display = 'block';
+                    for(var i=0;i<data.s.length;i++){
+                        html+='<li><a href="https://m.baidu.com/s?&wd='+data.s[i]+'">'+data.s[i]+'</a></li>'
+                    }
+                    oUl.innerHTML=html;
+                }else{
+                    oUl.style.display='none'
+                }
+}
+ var otxt=document.getElementById('q');
+   otxt.onmouseover=function(){
+   					otxt.placeholder="";
+   					otxt.style.padding="0.5rem";
+            	 var oUl=document.getElementById('ul1')
+                otxt.onkeyup=function(){
+                    if(this.value !=""){
+                        var oScript=document.createElement('script')    
+                        oScript.src='https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/?wd='+this.value+'&cb=baidudata'
+                        document.body.appendChild(oScript)
+                    }else{
+                    	otxt.placeholder="了解更多内容，百度一下，就知道";
+                    	otxt.style.paddingLeft="1rem";
+                        oUl.style.display='none'
+                    }
+                }
+            }
+    otxt.onblur=function(){
+    	otxt.placeholder="了解更多内容，百度一下，就知道";
+        otxt.style.paddingLeft="1rem";
+    }    
+
+  var mySwiper = new Swiper('.swiper-container', {
+	autoplay: true,//可选选项，自动滑动
+	delay:3000,
+
+})
+ </script>

@@ -1,0 +1,218 @@
+.wrap{
+	max-width: 640px;
+	min-width: 320px;
+	margin: 0 auto;
+	height:auto;
+	overflow: hidden;
+	position: relative;
+	box-sizing: border-box;
+	background-color: white;	
+}
+
+.topbox{
+	width: 100%;
+	height: 3rem/* 64px */;
+	position: relative;
+
+	box-sizing: border-box;
+	padding: 0.5rem/* 16px */;
+}
+.topbox img{
+
+	width: 2rem/* 32px */;
+	border-radius: 50%;
+}.topbox  .name{
+	position: absolute;
+	left: 3rem/* 64px */;
+	font-size: 1rem/* 16px */;
+}
+.topbox  .name .sex{
+	display: inline-block;
+	margin-left: 0.1rem/* 16px */;
+	width: 1rem/* 19px */;
+	height: 1rem/* 19px */;
+	background: url(../images/nv.png) no-repeat;
+	background-size: 100% 100%;
+}
+.topbox .time{
+	position: absolute;
+	left: 3rem/* 64px */;
+	top: 1.8rem/* 48px */;
+	font-size: 0.6rem/* 14px */;
+	color: #888;
+}
+.topbox .more{
+	display: inline-block;
+	width: 3rem/* 32px */;
+	height: 1rem/* 32px */;
+	position: absolute;
+	/*background: url(../images/more_unfold.png);*/
+	/*background-size: 100% 100%;*/
+	right: 0.5rem/* 16px */;
+	text-align: center;
+	color: orange;
+	padding: 2px 0;
+	border:1px solid orange;
+}
+
+
+.content{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 1rem/* 16px */;
+	margin: 0.5rem 0;
+	font-size: 0.8rem/* 16px */;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 1.3rem;
+    max-height:  12rem;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+}
+.content:after {
+    content: "..."; position: absolute; bottom: 0; right: 0; padding-left: 4rem;
+    background: -webkit-linear-gradient(left, transparent, #fff 55%);
+    background: -o-linear-gradient(right, transparent, #fff 55%);
+    background: -moz-linear-gradient(right, transparent, #fff 55%);
+    background: linear-gradient(to right, transparent, #fff 55%);
+}
+
+.content img{
+	width: 5rem/* 160px */;
+}
+.comment{
+	box-sizing: border-box;
+	padding: 0 0.5rem/* 16px */;
+	margin-bottom: 0.5rem/* 16px */;
+	border-bottom: 10px solid #ddd;
+}
+.comment span{
+	display: inline-block;
+	width: 30%;
+	font-size: 0.5rem/* 16px */;
+	height: 1.5rem/* 48px */;
+	box-sizing: border-box;
+	/*text-align: center;*/
+	line-height: 1.5rem/* 48px */;
+}
+.more{
+	font-size: 0.5rem/* 16px */;
+}
+.more img{
+	float: left;
+	width: 0.5rem/* 16px */;
+}
+.comment span img{
+	float: left;
+	width: 1rem/* 32px */;
+	cursor: pointer;
+	margin-top: 0.15625rem/* 5px */;
+	margin-left: 0.5rem/* 32px */;
+	margin-right: 0.5rem;
+}
+
+
+#header {
+	position:absolute;
+	left:0;
+	z-index:999;
+	width:640px;
+	height:43px;
+	min-width: 320px;
+	margin: 0 auto;
+	overflow:hidden;
+	background:#fdfdfc;
+	font:12px/40px hiragino sans gb,microsoft yahei,simsun;
+	box-shadow:3px 3px 3px rgba(0,0,0,0.2);
+}
+#top-line {
+	width:100%;
+	height:3px;
+	line-height:0;
+	font-size:0;
+	overflow:hidden;
+	text-align:center;
+	z-index:1;
+	background-color: red;
+	
+}
+#header .swiper-slide {
+	padding:0 0.625rem/* 20px */;
+	width:auto;
+}
+
+#announcement {
+	height:2em;
+	background:#f5f8fc;
+	border:1px solid #d2e1f1;
+	margin:0.5em;
+	margin-top:3rem;
+}
+#announcement a {
+	color:#294c7f;
+	text-decoration:none;
+	display:block;
+	line-height:2;
+	height:2em;
+	text-indent:0.5em;
+	overflow:hidden;
+}
+#tabs-container {
+
+	height:18rem/* 400px */;
+}
+.tabs {
+	border-top:2px solid #9ac7ed;
+	/*background:url(images/headbg.png) no-repeat left top #f9fafa;*/
+	background-size:auto 100%;
+	width:100%;
+	height:38px;
+	overflow:hidden;
+}
+.tabs a {
+	font-weight:normal;
+	text-align:center;
+	float:left;
+	width:64px;
+	height:38px;
+	line-height:38px;
+	color:#2a70be;
+	text-decoration:none;
+}
+.tabs a .active {
+	border-top:2px solid #2a70be;
+	margin-top:-2px;
+	/*background-image:url(images/tab_ui.png);*/
+	background-repeat:no-repeat;
+	-webkit-background-size:64px 39px;
+	-moz-background-size:64px 39px;
+	-o-background-size:64px 39px;
+	background-size:64px 39px;
+	background-position:left top;
+	color:#c14545;
+}
+.news-list {
+
+	padding:0 10px;
+}
+.news-list li {
+	overflow:hidden;
+	border-bottom:1px solid #eceef0;
+	box-shadow:0 1px 1px #fff;
+	font-weight:normal;
+	height:35px;
+	line-height:35px;
+	font-size:80%;
+}
+.line{
+	width: 100%;
+	height:0.5rem;
+	background-color:#ddd;
+}
+.footerline{
+
+	width: 100%;
+	height: 1px;
+	background-color: white;
+	margin-bottom: 4rem;
+}

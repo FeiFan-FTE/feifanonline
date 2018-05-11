@@ -1,0 +1,81 @@
+/*
+* @Author: Administrator
+* @Date:   2018-05-08 09:34:59
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-05-09 16:00:20
+*/
+
+.wrap{
+	max-width: 640px;
+	min-width: 320px;
+	margin: 0 auto;
+	height:50rem;
+	box-sizing: border-box;
+	background-color: white;
+}
+li{
+	text-align: center;
+}
+h2,h3{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-weight: 300;
+}
+.Welcome{
+	padding: 2rem 0;
+}
+.Welcome_title{
+	padding:1rem 2rem;
+}
+.showface{
+	text-align:center;
+
+}
+.showface img{
+	width: 4rem;
+	border-radius: 50%;
+}
+input{
+	border:1px solid skyblue;
+	border-radius: 5px;
+	height: 2rem;
+	width: 80%;
+	-webkit-appearance: none; 
+	text-align: center;
+	margin: 0.5rem 0;
+}
+#sub{
+	-webkit-appearance: none; 
+	background-color: #5490fe;
+	border:0;
+}
+#picbox{
+	width: 90%;
+	background-color: white;
+	height: 20rem/* 96px */;
+	overflow-y: scroll;
+	margin: 0.5rem/* 16px */ auto;
+	transition: all 0.5s; 
+	position: fixed;
+	z-index: 99;
+	left: 5%;
+	top: 10%;
+	display: none;
+}
+#picbox img{
+	width: 4rem;
+	border: 1px solid skyblue;
+	margin: 0.0625rem/* 2px */;
+}
+.register_Bt  input{
+	color: white;
+	background-color:#5490fe
+}
+.re_reg span{
+	color: block;
+	font-size: 0.5rem;
+}
+#msElement{
+	color: red;
+}

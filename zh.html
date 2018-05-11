@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>feifanonline-非凡在线-你要的都在这里</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<script type="text/javascript" src="js/m.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/zh.css">
+	<link rel="stylesheet" type="text/css" href="css/commonality.css">
+	<script type="text/javascript" src="js/cookie.js"></script>
+	<script type="text/javascript" src="js/cookie2.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/drag.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header>
+			<div class="header_box">
+				<!-- <img src="images/back_light.png" id="back"> -->
+				帐号
+			
+		</header>
+		<!-- 立即登录 -->
+		<div class="login" id="login">
+			<img src="http://feifanonline.top/images-1/1.jpg" alt="">
+			<span class="re_name">不够时间</span>
+			<span class="qiandao">签到</span>
+			<div class="re_sg"></div>
+			<div class="login_txt">
+				<h2>登录非凡在线平台</h2>	
+				手机电脑多端同步，海量精彩内容无限观看
+			</div>
+
+
+
+	<!-- 	 <div id="drag">
+		        <div class="drag_bg"></div>
+		        <div class="drag_text slidetounlock" onselectstart="return false;" unselectable="on">
+		            请按住滑块，拖动到最右边
+		        </div>
+		        <div class="handler handler_bg"></div>
+   	   </div> -->
+			<button class="btn" id="btn_dl">立即登录</button>
+		</div>
+		<!-- 内容 -->
+		<div class="con" id="con">
+			<div class="mymassage">
+				<div class="h"></div>
+				<div class="m_msg_c">
+						<img class="left" src="images/massage.png">
+						我的收藏
+						<img class="right" src="images/right.png">
+				</div>
+				<div class="h"></div>
+
+
+				<div class="m_msg_c">
+						<img class="left" src="images/vip.png">
+						成为会员
+						<img class="right" src="images/right.png">
+				</div>
+				<div class="m_msg_c">
+						<img class="left" src="images/shop.png">
+						商城
+						<img class="right" src="images/right.png">
+				</div>
+				<div class="m_msg_c">
+						<img class="left" src="images/flow.png">
+						赞助
+						<img class="right" src="images/right.png">
+				</div>
+				<div class="h"></div>
+				<div class="m_msg_c">
+						<img class="left" src="images/shezhi.png">
+						设置
+						<img class="right" src="images/right.png">
+				</div>
+				<div class="m_msg_c">
+						<img class="left" src="images/saoyisao.png">
+						扫一扫
+						<img class="right" src="images/right.png">
+				</div>
+				<div class="m_msg_c">
+						<img class="left" src="images/skin.png">
+						个性换肤
+						<img class="right" src="images/right.png">
+				</div>
+				<div class="m_msg_c" >
+						<img class="left" src="images/about.png">
+						关于我们
+						<img class="right" src="images/right.png">
+				</div>
+				<div class="m_msg_c">
+						<img class="left" src="images/skin.png">
+						加入我们
+						<img class="right" src="images/right.png">
+				</div>
+				<div class="h"></div>
+				<div  id="footp">
+						<img class="left" src="images/share.png">
+						<p>分享非凡在线</p>
+				</div>
+				
+			</div>
+
+		<div class="footer">
+			<ul>
+				<a href="index.html"><li><img src="images/index.png">首页</li></a>
+				<a href="forum.html"><li><img src="images/luntan.png">论坛</li></a>
+				<a href="theme.html"><li><img src="images/f-dj-search.png">发现</li></a>
+				<a href="zh.html"><li><img src="images/zhanghao.png">我的</li></a>
+			</ul>
+		</div>
+		</div>
+		<!-- 退出登录 -->
+		<div class="quit" id="quitbox">
+			<button id="quit">退出登录</button>
+		</div>	
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	var odenglu=document.getElementById('btn_dl');
+	var ocon=document.getElementById('con');
+	odenglu.onclick=function(){
+		window.location.href="loginEmail.html";
+	}
+	// 返回主页
+	// var oback=document.getElementById('back');
+	// oback.onclick=function(){
+	// 	window.location.href="index.html";
+	// }
+
+	   // 获得退出div
+     var oquitbox=document.getElementById('quitbox');
+     var oquit=document.getElementById('quit');
+
+
+	var  tfemail=getQueryString('useremail');
+
+	var ofoot=document.getElementById('footer');
+	// var onamebox=document.getElementById('username');
+	var orelogin=document.getElementById('login');
+	var orename=getByClass(orelogin,'re_name')[0];
+	var oqiandao=getByClass(orelogin,'qiandao')[0];
+
+	var aremsg=getByClass(orelogin,'re_sg')[0];
+
+	// console.log(aremsg);
+	var oreface=orelogin.getElementsByTagName('img')[0];
+	var ologintxt=getByClass(orelogin,'login_txt')[0];//登录时文字说明
+
+	
+	// 验证是否有邮箱传回，若有则隐藏登录按钮
+
+	if(getCookie('useremail')!="" && getCookie('useremail')!=undefined){
+
+		// onamebox.style.display='block';
+		// onamebox.innerHTML='欢迎'+tfemail+'回来';
+		odenglu.style.display='none';//登录按钮隐藏
+		ologintxt.style.display='none';//登录文本隐藏
+		orename.style.display='block';
+		oreface.style.display='block';
+		oqiandao.style.display='block';
+		aremsg.style.display='block';
+		orename.innerHTML=decodeURIComponent(getCookie('username'));
+		oreface.src=decodeURIComponent(getCookie('userface'));
+		
+		oquitbox.style.display='block';
+	
+	}else{
+		
+		oreface.style.display='none';
+		// ofoot.style.display='block';
+	}
+	
+	oquit.onclick=function(){
+		delCookie('useremail');
+		delCookie('username');
+		delCookie('userid');
+		delCookie('userface');
+
+		window.location.href='zh.html';
+	}
+	
+	
+
+	var ameik=getByClass(ocon,'m_msg_c');
+
+	for(var i=0;i<ameik.length;i++){
+		ameik[i].onclick=function(){
+			alert('最新功能正在开发当中，尽情期待')
+		}
+		
+	}
+
+// console.log(ameik.length);
+
+	function getByClass(parent, className) {
+        var aResult = []; //设置一个空数组
+        var aEl = parent.getElementsByTagName('*');
+        for (var i = 0; i < aEl.length; i++) {
+
+            if (aEl[i].className == className) {
+                aResult.push(aEl[i]);
+            }
+
+        }
+        return aResult;
+    }	
+ 
+// 获得地址栏里的内容方法
+ function getQueryString(name) {
+		        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+		        var r = window.location.search.substr(1).match(reg);
+		        if (r != null) {
+		            return unescape(r[2]);
+		        }
+		        return null;
+}
+
+$('#drag').drag();
+</script>

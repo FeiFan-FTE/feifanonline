@@ -1,0 +1,69 @@
+/*commonality*/
+body,ul,li,h1,h2,h3,h4,span{
+	padding: 0;
+	margin: 0;
+}
+
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+
+body{
+	background-color: rgb(0,0,0);
+	font-size: 0.75rem/* 24px */;
+	font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+header{
+	width: 100%;
+	height: 3rem/* 64px */;
+	background: skyblue;
+	line-height: 2rem;
+	text-align: center;
+	color: white;
+	font-size: 1.2rem;
+	position: relative;
+	line-height: 3rem;
+	letter-spacing:2px;
+}
+
+header img{
+	position: absolute;
+	left: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.footer{
+	width: 20rem/* 640px */;
+	height: 3rem/* 96px */;
+	background-color: #fafafa;
+	position: fixed;
+	bottom: 0;
+	z-index: 9999;
+	border-top: 1px solid #d9d9d9;
+}ul{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.footer img{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 1.5rem/* 48px */;
+
+}.footer li{
+	box-sizing: border-box;
+	width: 25%;
+	height: 100%;
+	text-align: center;
+	float: left;
+	padding-top: 5px;
+	color: #707070;
+	letter-spacing: 2px;
+	position: relative;
+	line-height:4.375rem/* 140px */;
+	font-size: 0.8rem/* 20px */;
+}

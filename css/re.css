@@ -1,0 +1,90 @@
+/*注册样式*/
+
+.wrap{
+	max-width: 640px;
+	min-width: 320px;
+	margin: 0 auto;
+	height:50rem;
+	box-sizing: border-box;
+	background-color: white;
+}
+.header{
+	width: 100%;
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 1rem/* 32px */;
+	text-align: center;
+	background:#ff3a3d;
+	color: white;
+}
+.header img{
+	float: left;
+}
+.showface{
+	width: 100%;	
+	position: relative;
+}
+.showface img{
+	width: 4rem/* 128px */;
+	position: absolute;
+	right: 1rem/* 32px */;
+	bottom: -4.3rem/* 16px */;
+}
+#register li{
+	width: 90%;
+	margin:0 auto;
+}
+input{
+	box-sizing: border-box;
+	padding-left: 3px;
+	outline: none;
+	margin-top: 5px;
+	margin-left: 5px;
+	border:1px solid #ddd;
+	width: 50%;
+	border-radius: 2px;
+	height: 2rem/* 32px */;
+}
+label{
+	font-size: 0.5rem/* 16px */;
+}
+#upface{
+	font-size: 0.5rem/* 16px */;
+	margin-left: 1.5rem/* 16px */;
+
+}
+
+#sub{
+	width: 90%;
+	height: 2rem/* 64px */;
+	font-size: 1rem/* 32px */;
+	border-radius: 1rem/* 32px */;
+	color: white;
+	background-color: #5490fe;
+}
+#picbox{
+	width: 90%;
+	background-color: white;
+	height: 20rem/* 96px */;
+	overflow-y: scroll;
+	margin: 0.5rem/* 16px */ auto;
+	transition: all 0.5s; 
+	position: fixed;
+	z-index: 99;
+	left: 5%;
+	display: none;
+}
+#picbox img{
+	width: 4rem;
+	border: 1px solid skyblue;
+	margin: 0.0625rem/* 2px */;
+}
+#msElement{
+	display: inline-block;
+	width: 90%;
+	height: 1rem/* 32px */;
+	font-size: 0.5rem/* 16px */;
+	text-align: center;
+	color: red;
+
+}

@@ -1,0 +1,67 @@
+.wrap{
+	max-width: 640px;
+	min-width: 320px;
+	margin: 0 auto;
+	
+	height: auto;
+	box-sizing: border-box;
+	background-color: white;
+	/*border: 1px solid red;*/
+
+}
+li{
+
+}
+#con{
+	height: auto;
+}
+#con .topbox{
+	width: 100%;
+	height:5rem;
+	position: relative;
+
+}
+.topbox img{
+	position: absolute;
+	left:  1rem;
+	top: 0.5rem;
+	width: 3rem/* 32px */;
+	border-radius: 50%;
+}.topbox  .name{
+	position: absolute;
+	left: 5rem/* 64px */;
+	font-size: 1rem/* 16px */;
+	color: black;
+	top: 0.5rem;
+}
+.topbox  .name .sex{
+	display: inline-block;
+	margin-left: 1rem/* 16px */;
+	width: 1rem/* 19px */;
+	height: 1rem/* 19px */;
+	background: url(../images/nv.png) no-repeat;
+	background-size: 100% 100%;
+}
+.topbox .time{
+	position: absolute;
+	left:5rem/* 64px */;
+	top:2.5rem/* 48px */;
+	font-size: 0.5rem/* 14px */;
+	color: #888;
+}
+#con .content{
+	width: 100%;
+	height: auto;
+	font-size: 1rem;
+	color: black;
+	background-color: white;
+	padding: 0.8rem;
+	text-indent: 2rem;
+	line-height: 1.5rem;
+	box-sizing: border-box;
+	white-space: pre-wrap; /*css-3*/ 
+	white-space: -moz-pre-wrap; /*Mozilla,since1999*/ 
+	white-space: -pre-wrap; /*Opera4-6*/ 
+	white-space: -o-pre-wrap; /*Opera7*/ 
+	word-wrap: break-word; /*InternetExplorer5.5+*/ 
+}
