@@ -1,81 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>feifanonline-非凡在线-你要的都在这里</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-	<script type="text/javascript" src="js/m.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/commonality.css">
-
-	<link rel="stylesheet" type="text/css" href="css/kantie.css">
+    <meta charset="UTF-8">
+    <title>feifanonline-非凡在线-你要的都在这里</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <script type="text/javascript" src="js/m.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/commonality.css">
+    <link rel="stylesheet" type="text/css" href="css/kantie.css">
 </head>
+
 <body>
-	
-	<div class="wrap">
-		<header>
-			<div class="header_box">
-				<img src="images/back_light.png" id="back">
-				看帖
-			
-			</div>
-
-			
-
-		</header>
-
-		
-			<ul class="con" id="con">
-		
-
-			</ul>
-
-
-			<div class="footer">
-			<ul>
-				<a href="index.html"><li><img src="images/index.png">首页</li></a>
-				<a href="forum.html"><li><img src="images/luntan.png">论坛</li></a>
-				<a href="theme.html"><li><img src="images/f-dj-search.png">发现</li></a>
-				<a href="zh.html"><li><img src="images/zhanghao.png">我的</li></a>
-			</ul>
-		</div>
-	</div>
+    <div class="wrap">
+        <header>
+            <div class="header_box">
+                <img src="images/back_light.png" id="back">
+                看帖
+            </div>
+        </header>
+        <ul class="con" id="con">
+        </ul>
+        <div class="footer">
+            <ul>
+                <a href="index.html">
+                    <li><img src="images/index.png">首页</li>
+                </a>
+                <a href="forum.html">
+                    <li><img src="images/luntan.png">论坛</li>
+                </a>
+                <a href="theme.html">
+                    <li><img src="images/f-dj-search.png">发现</li>
+                </a>
+                <a href="zh.html">
+                    <li><img src="images/zhanghao.png">我的</li>
+                </a>
+            </ul>
+        </div>
+    </div>
 </body>
+
 </html>
-
 <script type="text/javascript">
-	// 返回主页
-	var oback=document.getElementById('back');
-	oback.onclick=function(){
-		window.location.href="forum.html";
-	}
-function GetQueryString(name)//获得id的方法
+// 返回主页
+var oback = document.getElementById('back');
+oback.onclick = function() {
+    window.location.href = "forum.html";
+}
+
+function GetQueryString(name) //获得id的方法
 {
-     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-     var r = window.location.search.substr(1).match(reg);
-     if(r!=null)return  unescape(r[2]); return null;
-}	
-console.log(GetQueryString('id'))
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;
+}
 
-var con=document.getElementById('con')
+var con = document.getElementById('con')
 
-	var json=new XMLHttpRequest();
+var json = new XMLHttpRequest();
 
-	 json.open('GET','php/GetBookData.php',true);
-            json.onreadystatechange=function(){
-                if (json.readyState == 4 && json.status == 200) {
-                     var success =JSON.parse(json.responseText);
-                 
-                   
-
-                 	let arry=success.books;
-
-             
-                 	for(i in arry){
-                 		
-                 		if(GetQueryString('id')==arry[i].id){//
-
-                 			con.innerHTML=`
-		
+json.open('GET', 'php/GetBookData.php', true);
+json.onreadystatechange = function() {
+    if (json.readyState == 4 && json.status == 200) {
+        var success = JSON.parse(json.responseText);
+        let arry = success.books;
+        for (i in arry) {
+            if (GetQueryString('id') == arry[i].id) { //
+                con.innerHTML = `
 						<li>
 								<div class="topbox">
 									<img src="${arry[i].userface}">
@@ -86,19 +77,15 @@ var con=document.getElementById('con')
 								</div>
 								<pre class="content">
 									${arry[i].content}
-
 								</pre>
-							
-							</li>
-
-                 			`
-                 		}
-                 	}
-                                }else if(json.status == 404){
-                    alert('接口地址不存在')
-                }
-               
+							</li>`
             }
-          
-   json.send();   
+        }
+    } else if (json.status == 404) {
+        alert('接口地址不存在')
+    }
+
+}
+
+json.send();
 </script>

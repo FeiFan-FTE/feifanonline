@@ -1,130 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>feifanonline-非凡在线-你要的都在这里</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-	<script type="text/javascript" src="js/m.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/commonality.css">
-	<link rel="stylesheet" type="text/css" href="css/loginemail.css">
-	<script type="text/javascript" src="js/cookie.js"></script>
-	<script type="text/javascript" src="js/cookie2.js"></script>
-	
+    <meta charset="UTF-8">
+    <title>feifanonline-非凡在线-你要的都在这里</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <script type="text/javascript" src="js/m.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/commonality.css">
+    <link rel="stylesheet" type="text/css" href="css/loginemail.css">
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script type="text/javascript" src="js/cookie2.js"></script>
 </head>
+
 <body>
-	<div class="wrap">
-		<div class="header">
-			<img src="images/back_light.png" id="back_light">
-		
-		
-		</div>
-
-
-		<div class="con">
-			<div class="emailbox">
-				
-				<input type="text" name="" id="useremail" placeholder="邮箱" >
-			</div>
-			<div class="passwrodbox">
-			
-				<input type="password" name="" id="password" placeholder="密码" >
-				<input type="hidden" name="PostUser" id="PostUser" value="Login">
-			</div>
-			<div class="mes" id="mes">
-				
-				
-			</div>
-		</div>
-		<div class="btnbox">
-			<button class="btn" id="submint">登录</button>
-		</div>
-		<div class="re_box">
-			<span><a href="reg.html">注册</a></span>
-			<span class="forget">忘记密码</span>
-		</div>
-			
-		<div class="other">
-			<h3>其他登录方式</h3>
-		</div>
-
-	</div>
+    <div class="wrap">
+        <div class="header">
+            <img src="images/back_light.png" id="back_light">
+        </div>
+        <div class="con">
+            <div class="emailbox">
+                <input type="text" name="" id="useremail" placeholder="邮箱">
+            </div>
+            <div class="passwrodbox">
+                <input type="password" name="" id="password" placeholder="密码">
+                <input type="hidden" name="PostUser" id="PostUser" value="Login">
+            </div>
+            <div class="mes" id="mes">
+            </div>
+        </div>
+        <div class="btnbox">
+            <button class="btn" id="submint">登录</button>
+        </div>
+        <div class="re_box">
+            <span><a href="reg.html">注册</a></span>
+            <span class="forget">忘记密码</span>
+        </div>
+        <div class="other">
+            <h3>其他登录方式</h3>
+        </div>
+    </div>
 </body>
+
 </html>
 <script type="text/javascript">
+function isEmail(str) {
+    var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+    return reg.test(str);
+}
 
-	function isEmail(str){ 
-		var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/; 
-		return reg.test(str); 
-	} 
+// 验证邮箱为空和合法性
+function isemail() {
+    var useremail = document.getElementById('useremail');
+    var mesError = document.getElementById('mes');
+    if (useremail.value == '') {
+        mesError.innerHTML = '邮箱不能为空！';
+    } else {
 
-	// 验证邮箱为空和合法性
-	function isemail(){
-		var useremail=document.getElementById('useremail');
-		var mesError=document.getElementById('mes');
-		if(useremail.value==''){
-			mesError.innerHTML='邮箱不能为空！';
-		}else{
+        if (isEmail(useremail.value)) {
 
-			if(isEmail(useremail.value)){
-				
-			}else{
-				mesError.innerHTML='邮箱不合法，请确实填写';
-			}
-		}
-	}
-	function ispassword(){
-		var password=document.getElementById('password');
-		var mesError=document.getElementById('mes');
-		if(password.value==''){
-				mesError.innerHTML='密码不能为空，请正确填写';
-		}
-	}
+        } else {
+            mesError.innerHTML = '邮箱不合法，请确实填写';
+        }
+    }
+}
 
-	var obtn=document.getElementById('submint');
+function ispassword() {
+    var password = document.getElementById('password');
+    var mesError = document.getElementById('mes');
+    if (password.value == '') {
+        mesError.innerHTML = '密码不能为空，请正确填写';
+    }
+}
 
-	obtn.onclick=function(){
-		
-		isemail();//验证邮箱合法性
-		ispassword();//验证密码合法性
+var obtn = document.getElementById('submint');
 
-		var ajax=new XMLHttpRequest();
+obtn.onclick = function() {
 
-		var password=document.getElementById('password').value;
-		var useremail=document.getElementById('useremail').value;
-		var login=document.getElementById('PostUser').value;
-		
-		var  mesError=document.getElementById('mes');
+    isemail(); //验证邮箱合法性
+    ispassword(); //验证密码合法性
 
-		// 打开、
-		// ajax.open('GET','http://www.hzbiz.net/tianyan/phpApi/PostUser.php',true);
+    var ajax = new XMLHttpRequest();
 
-		ajax.open('POST','../tf/php/PostUser.php',true);
-		var url='PostUser='+login+'&useremail='+useremail+'&password='+password;
-		ajax.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-		ajax.onreadystatechange=function(){
-			if(ajax.readyState==4&&ajax.status==200){
-						// console.log(ajax);
+    var password = document.getElementById('password').value;
+    var useremail = document.getElementById('useremail').value;
+    var login = document.getElementById('PostUser').value;
 
-						var json=JSON.parse(this.response)
-						// console.log(ajax);
-						mesError.innerHTML=json.message;
-						if(json.valid==true){
-						// 跳转可以用单引号  传送值不能用单引号
-						 // setCookie2('useremail',useremail);
-				 		 // setCookie2('username',username);
-				 		 // setCookie2('userface',userface);
-							window.location.href="zh.html";
+    var mesError = document.getElementById('mes');
 
-						}
-				}
-		}
-		ajax.send(url);
-	}
+    // 打开、
+    // ajax.open('GET','http://www.hzbiz.net/tianyan/phpApi/PostUser.php',true);
 
-	// 返回
-	var  oback=document.getElementById('back_light');
-	oback.onclick=function(){
-		window.location.href="zh.html";
-	}
+    ajax.open('POST', '../tf/php/PostUser.php', true);
+    var url = 'PostUser=' + login + '&useremail=' + useremail + '&password=' + password;
+    ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState == 4 && ajax.status == 200) {
+            // console.log(ajax);
 
+            var json = JSON.parse(this.response)
+            // console.log(ajax);
+            mesError.innerHTML = json.message;
+            if (json.valid == true) {
+                // 跳转可以用单引号  传送值不能用单引号
+                // setCookie2('useremail',useremail);
+                // setCookie2('username',username);
+                // setCookie2('userface',userface);
+                window.location.href = "zh.html";
+
+            }
+        }
+    }
+    ajax.send(url);
+}
+
+// 返回
+var oback = document.getElementById('back_light');
+oback.onclick = function() {
+    window.location.href = "zh.html";
+}
 </script>

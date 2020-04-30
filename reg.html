@@ -1,198 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>feifanonline-非凡在线-你要的都在这里</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-	<script type="text/javascript" src="js/m.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/commonality.css">
-	<link rel="stylesheet" type="text/css" href="css/register.css">
-	<!-- <link rel="stylesheet" type="text/css" href="css/drag.css"> -->
-	
-	<!-- <link rel="stylesheet" type="text/css" href="css/re.css"> -->
-	<script type="text/javascript" src="js/cookie2.js"></script>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/drag.js"></script>
+    <meta charset="UTF-8">
+    <title>feifanonline-非凡在线-你要的都在这里</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <script type="text/javascript" src="js/m.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/commonality.css">
+    <link rel="stylesheet" type="text/css" href="css/register.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/drag.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/re.css"> -->
+    <script type="text/javascript" src="js/cookie2.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/drag.js"></script>
 </head>
+
 <body>
-	<div class="wrap">
-	<!-- 	<div class="header">
+    <div class="wrap">
+        <!-- 	<div class="header">
 			<img src="images/back_light.png" id="back_light">
 			邮箱号注册
 			
 		</div> -->
-	<h2 class="Welcome">欢迎</h2>
-
-
-	<h3 class="Welcome_title">非凡在线交流平台是一款为大众提供娱乐休闲生活服务的信息分享和交流平台</h3>
-	<form action=""  id="register">	
-			<div class="showface">
-				<img id="showface" src="images-1/1.jpg">
-				<div id="upface"> 更换头像</div>
-			</div>	
-			<div class="picbox" id="picbox">
-	
-				
-			</div>
-		<ul>
-						
-			<li>
-			<input type="text" name="useremail" id="useremail" placeholder="Email" >
-			</li>
-			<li>
-				<input type="text" name="username" id="username" placeholder="nickname" onblur="vaildateEmpty('username')"></li>
-
-			<li><input type="password" name="passwrod" id="password" placeholder="password"></li>
-			<li>
-				<input type="password" name="repswd" id="setpassword" placeholder="confirm password" onblur="vaildatePwd('password','setpassword')">
-					
-			</li>
-
-			<li class="userface1" style="display: none;">
-				<input  type="text" name="userface" id="userface" placeholder="上传头像">
-					
-			</li>
-			
-			<li style="display: none;">
-				<input type="hidden" name="studentname" id="studentname" value="陈非凡">
-				<input type="hidden" name="PostUser" id="PostUser" value="Add">
-			</li>
-			<li>
-				<span id="msElement"></span>
-			</li>
-			<li class="register_Bt">
-				<input type="button" name="" id="sub" value="注册">
-					
-			</li>
-			<li class="re_reg">
-				<span><a href="loginEmail.html" class="re_dl">登录</a>|<a href="index.html" title="">返回</a></span>
-			</li>
-
-		</ul>
-	
-	</form>
-	
-
-	</div>
+        <h2 class="Welcome">欢迎</h2>
+        <h3 class="Welcome_title">非凡在线交流平台是一款为大众提供娱乐休闲生活服务的信息分享和交流平台</h3>
+        <form action="" id="register">
+            <div class="showface">
+                <img id="showface" src="images-1/1.jpg">
+                <div id="upface"> 更换头像</div>
+            </div>
+            <div class="picbox" id="picbox">
+            </div>
+            <ul>
+                <li>
+                    <input type="text" name="useremail" id="useremail" placeholder="Email">
+                </li>
+                <li>
+                    <input type="text" name="username" id="username" placeholder="nickname" onblur="vaildateEmpty('username')"></li>
+                <li><input type="password" name="passwrod" id="password" placeholder="password"></li>
+                <li>
+                    <input type="password" name="repswd" id="setpassword" placeholder="confirm password" onblur="vaildatePwd('password','setpassword')">
+                </li>
+                <li class="userface1" style="display: none;">
+                    <input type="text" name="userface" id="userface" placeholder="上传头像">
+                </li>
+                <li style="display: none;">
+                    <input type="hidden" name="studentname" id="studentname" value="陈非凡">
+                    <input type="hidden" name="PostUser" id="PostUser" value="Add">
+                </li>
+                <li>
+                    <span id="msElement"></span>
+                </li>
+                <li class="register_Bt">
+                    <input type="button" name="" id="sub" value="注册">
+                </li>
+                <li class="re_reg">
+                    <span><a href="loginEmail.html" class="re_dl">登录</a>|<a href="index.html" title="">返回</a></span>
+                </li>
+            </ul>
+        </form>
+    </div>
 </body>
+
 </html>
 <script type="text/javascript">
-	    $('#drag').drag();
-	var oface=document.getElementById('upface');
-	var ouserface=document.getElementById('userface');
+$('#drag').drag();
+var oface = document.getElementById('upface');
+var ouserface = document.getElementById('userface');
 
 
-	var opicbox=document.getElementById('picbox');
+var opicbox = document.getElementById('picbox');
 
 
-	oface.onclick=function(){
-		
-		opicbox.style.display='block';
-	}
-	// oface.onblur=function(){
-	// 	opicbox.style.display='none';
-	// }
+oface.onclick = function() {
 
-	var http = 'http://feifanonline.top/images-1/ ';
-	var imgs = ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jpg','27.jpg','28.jpg','29.jpg','30.jpg','31.jpg','32.jpg','33.jpg','34.jpg','35.jpg','36.jpg','37.jpg','38.jpg','39.jpg','40.jpg'];
-	for(var i=0;i<imgs.length;i++){
-			opicbox.innerHTML+='<img src=images-1/'+imgs[i]+'>';
+    opicbox.style.display = 'block';
+}
+// oface.onblur=function(){
+// 	opicbox.style.display='none';
+// }
 
-	}
-	var aimgs=opicbox.getElementsByTagName('img');
-	var showface=document.getElementById('showface');
-	for(var i=0;i<aimgs.length;i++){
-			aimgs[i].onclick=function(){
-				ouserface.value=this.src;
-				showface.src=this.src;
-				opicbox.style.display='none';
-			}
-	}
+var http = 'http://feifanonline.top/images-1/ ';
+var imgs = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg', '21.jpg', '22.jpg', '23.jpg', '24.jpg', '25.jpg', '26.jpg', '27.jpg', '28.jpg', '29.jpg', '30.jpg', '31.jpg', '32.jpg', '33.jpg', '34.jpg', '35.jpg', '36.jpg', '37.jpg', '38.jpg', '39.jpg', '40.jpg'];
+for (var i = 0; i < imgs.length; i++) {
+    opicbox.innerHTML += '<img src=images-1/' + imgs[i] + '>';
 
-	var ainput=document.getElementsByTagName('input');
+}
+var aimgs = opicbox.getElementsByTagName('img');
+var showface = document.getElementById('showface');
+for (var i = 0; i < aimgs.length; i++) {
+    aimgs[i].onclick = function() {
+        ouserface.value = this.src;
+        showface.src = this.src;
+        opicbox.style.display = 'none';
+    }
+}
 
-	var asp=document.getElementsByTagName('span');
-	for(var i=0;i<ainput.length;i++){
-		ainput.index=i;
-		ainput[i].onclick=function(){
-		// asp[this.idnex].innerHTML='this.placeholder';
-		this.placeholder='';	
-		}
-		
-	}
-	function vaildateEmpty(elementName){
-				var oelement=document.getElementById(elementName);
-				var ms=document.getElementById('msElement');
+var ainput = document.getElementsByTagName('input');
 
-				if(oelement.value==""){
-						ms.innerHTML='内容不能为空！';
-						ms.className='active';
-				}
-				else{
+var asp = document.getElementsByTagName('span');
+for (var i = 0; i < ainput.length; i++) {
+    ainput.index = i;
+    ainput[i].onclick = function() {
+        // asp[this.idnex].innerHTML='this.placeholder';
+        this.placeholder = '';
+    }
 
-				}
-	}
-	function vaildatePwd(srcName,desName){
-			var srcName=document.getElementById(srcName);
-			var desName=document.getElementById(desName);
-			var ms=document.getElementById('msElement');
-			if(srcName.value==desName.value){
-				ms.innerHTML='';		
-			}else{
-				ms.innerHTML='密码不一致，请重新输入！';
-				ms.className='active';
-			}
-		
-	}
-	// function vailemail(){
-	// 	var useremail=document.getElementById('useremail');
-	// 	if(useremail.value==(^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$){
+}
 
-	// 	}else{
-	// 		ms.innerHTML='邮箱格式错误！';
-	// 		ms.className='active';
-	// 	}
-	
-	// }
+function vaildateEmpty(elementName) {
+    var oelement = document.getElementById(elementName);
+    var ms = document.getElementById('msElement');
 
-	var sub=document.getElementById('sub');
+    if (oelement.value == "") {
+        ms.innerHTML = '内容不能为空！';
+        ms.className = 'active';
+    } else {
 
-	sub.onclick=function(){
-		var  username=document.getElementById('username').value;
-		var  password=document.getElementById('password').value;
-		var  setpassword=document.getElementById('setpassword').value;
-		var  userface=document.getElementById('userface').value;
-		var  useremail=document.getElementById('useremail').value;
-		var  studentname=document.getElementById('studentname').value;
-		var  postUser=document.getElementById('PostUser').value;
-		var  msspan=document.getElementById('msElement');
-		var  oajax=new XMLHttpRequest();
-		
-		oajax.open('POST','php/PostUser.php',true);
-		oajax.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-		var feifan='username='+username+'&password='+password+'&setpassword='+setpassword+'&userface='+userface+'&useremail='+useremail+'&studentname='+studentname+'&PostUser='+postUser;
-		
-		oajax.onreadystatechange=function (){
-			if(oajax.readyState==4&&oajax.status==200){
-					// console.log(this);
-					var json=JSON.parse(this.response);
-			 		 msspan.innerHTML=	json.message;
-			 		 setCookie2('useremail',useremail);
-			 		 setCookie2('username',username);
-			 		 setCookie2('userface',userface);
+    }
+}
 
-			 		 console.log(json.message)
-			 		 if(json.message=="用户添加成功!"){
-			 		 	 window.location.href="zh.html";
-			 		 }
-			 		
-			}
-		}
-		oajax.send(feifan);
-	}
+function vaildatePwd(srcName, desName) {
+    var srcName = document.getElementById(srcName);
+    var desName = document.getElementById(desName);
+    var ms = document.getElementById('msElement');
+    if (srcName.value == desName.value) {
+        ms.innerHTML = '';
+    } else {
+        ms.innerHTML = '密码不一致，请重新输入！';
+        ms.className = 'active';
+    }
 
+}
+// function vailemail(){
+// 	var useremail=document.getElementById('useremail');
+// 	if(useremail.value==(^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$){
 
-	
+// 	}else{
+// 		ms.innerHTML='邮箱格式错误！';
+// 		ms.className='active';
+// 	}
 
+// }
 
+var sub = document.getElementById('sub');
+
+sub.onclick = function() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var setpassword = document.getElementById('setpassword').value;
+    var userface = document.getElementById('userface').value;
+    var useremail = document.getElementById('useremail').value;
+    var studentname = document.getElementById('studentname').value;
+    var postUser = document.getElementById('PostUser').value;
+    var msspan = document.getElementById('msElement');
+    var oajax = new XMLHttpRequest();
+
+    oajax.open('POST', 'php/PostUser.php', true);
+    oajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    var feifan = 'username=' + username + '&password=' + password + '&setpassword=' + setpassword + '&userface=' + userface + '&useremail=' + useremail + '&studentname=' + studentname + '&PostUser=' + postUser;
+
+    oajax.onreadystatechange = function() {
+        if (oajax.readyState == 4 && oajax.status == 200) {
+            // console.log(this);
+            var json = JSON.parse(this.response);
+            msspan.innerHTML = json.message;
+            setCookie2('useremail', useremail);
+            setCookie2('username', username);
+            setCookie2('userface', userface);
+
+            console.log(json.message)
+            if (json.message == "用户添加成功!") {
+                window.location.href = "zh.html";
+            }
+
+        }
+    }
+    oajax.send(feifan);
+}
 </script>
